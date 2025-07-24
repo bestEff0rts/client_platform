@@ -1,10 +1,10 @@
 #ОСНОВНОЙ ml_pipeline.py ПРОТЕСТИРОВАНО
 def ЛОГИКА:
-  Парсинг и расчёт target;
-  preprocessing_pipe_x: FeatureEngineering + UniStationarityTransformer + Scaler;
-  preprocessing_pipe_x.fit_transform(X) → X_transformed;
-  train_test_split(X_transformed, y) (shuffle=False) 
-  fit(model = build_model("rf"))
+  Парсинг и расчёт target;DONE
+  preprocessing_pipe_x: FeatureEngineering + UniStationarityTransformer + Scaler;DONE
+  preprocessing_pipe_x.fit_transform(X) → X_transformed; DONE
+  train_test_split(X_transformed, y) (shuffle=False) DOING
+  fit(model = build_model("rf"))-ФАБРИКА МОДЕЛЕЙ
   model.fit(X_train, y_train)
   )
   сохр предобученной МОДЕЛИ в .pkl (joblib.dump(rf_fit, "models/rf_fit.pkl")
@@ -173,4 +173,19 @@ conn.commit()
 conn.close()
 
 #ДОРАБОТАТЬ это автоматизация загрузки пока можно и вручную через http://127.0.0.1:8000/docs#/
-
+#save to fastapi swagger ui SQLAlchemy и FastAPI ORM
+# from datetime import datetime
+# from sqlalchemy.orm import Session
+# from server import engine, ModelMeta  # или вынеси в models.py
+# 
+# model_path = f"models/{model_name}.pkl"
+# 
+# with Session(bind=engine) as session:
+#     record = ModelMeta(
+#         name=model_name,
+#         uploaded_at=datetime.utcnow(),
+#         path=model_path
+#     )
+#     session.add(record)
+#     session.commit()
+# 

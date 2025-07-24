@@ -1,6 +1,5 @@
 #CV for tuning parameters- КроссВалидация для подбори гиперпараметров 
-#islp: is should come as *no surprise* that we use **CROSS VALIDATION** to estimate the tuning parameters
-
+#from myCV import 
 #GridSearchCV vs RandomizedSearchCV(random_state=69 тк инициализация случайная) = = SGD vs GD(gradient descent)
 from sklearn.cross_decomposition import PLSRegression
 from sklearn.svm import SVR
